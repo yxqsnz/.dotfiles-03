@@ -1,0 +1,32 @@
+* {
+  font-family: Ubuntu;
+  font-size: 14px;
+}
+
+window {
+  background-color: #1a1b26;
+  border: 1px solid #232a2d;
+}
+
+#workspaces button.focused {
+  color: #bb9af7;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  border: none;
+  color: #c0caf5;
+}
+
+#workspaces,
+#window,
+#clock,
+#pulseaudio {
+  color: #c0caf5;
+  padding: 0px 5px;
+}
+
+#battery {
+  padding-left: 6px;
+  color: #c0caf5;
+}
