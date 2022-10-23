@@ -4,6 +4,7 @@
 declare -A _dotfiles=(
  ["wm/sway"]="$HOME/.config/sway"
  ["wm/waybar"]="$HOME/.config/waybar"
+ ["wm/mako"]="$HOME/.config/mako"
  ["app/term/foot"]="$HOME/.config/foot"
  ["shell/fish"]="$HOME/.config/fish"
  ["comp/cargo.toml"]="$HOME/.cargo/config.toml"
