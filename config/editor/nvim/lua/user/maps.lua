@@ -7,7 +7,7 @@ which.register({
 		f = { "<cmd>Telescope find_files<cr>", "Find files" },
 		k = { "<cmd>Telescope keymaps<cmd>", "Find Keymaps" },
 	},
-	g = {
+	G = {
 		s = { "<cmd>Telescope git_status<cr>", "Show git status" },
 		c = { "<cmd>Telescope git_commits<cr>", "Show git commits" },
 	},
