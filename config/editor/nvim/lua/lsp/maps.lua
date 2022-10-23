@@ -4,14 +4,15 @@ local which = require("which-key")
 return function(bufnr)
 	which.register({
 		l = {
-			a = { vim.lsp.buf.code_action, "Run code action" },
+			a = { "<cmd>Lspsaga code_action<cr>", "Run code action" },
 			r = { "<cmd>Lspsaga rename<cr>", "Rename symbol" },
 			S = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Find workspace symbols" },
 			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Find document symbols" },
-			ds = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Find dynamic workspace symbols" },
+			wds = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Find dynamic workspace symbols" },
 			i = { "<cmd>Telescope lsp_implementations<cr>", "Find implementations" },
 			d = { "<cmd>Telescope lsp_definitions<cr>", "Find document definition" },
-			fd = { "<cmd>Telescope lsp_type_definitions<cr>", "Find type definitions" },
+			kd = { "<cmd>Telescope lsp_type_definitions<cr>", "Find type definitions" },
+			fn = { "<cmd>Lspsaga lsp_finder<cr>", "Lsp finder" },
 		},
 		t = {
 			t = { "<cmd>TroubleToggle<cr>", "Show project diagnostics" },

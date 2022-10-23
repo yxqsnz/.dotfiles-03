@@ -1,16 +1,19 @@
 return function(use)
 	use({
 		"hrsh7th/nvim-cmp",
+		event = { "BufRead", "BufNewFile" },
 		requires = {
 			"hrsh7th/cmp-nvim-lsp",
 			"saadparwaiz1/cmp_luasnip",
 			"L3MON4D3/LuaSnip",
-			"hrsh7th/cmp-buffer",
+			{ "hrsh7th/cmp-buffer", event = { "BufRead", "BufNewFile" } },
+			"windwp/nvim-autopairs",
 		},
 		config = function()
 			local luasnip = require("luasnip")
 			local cmp = require("cmp")
 			local kind = require("ext.editor.cmp.kind")
+			require("nvim-autopairs").setup({})
 
 			cmp.setup({
 				formatting = {
@@ -61,6 +64,10 @@ return function(use)
 					{ name = "buffer" },
 				},
 			})
+
+			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+			local cmp = require("cmp")
+			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 		end,
 	})
 end
