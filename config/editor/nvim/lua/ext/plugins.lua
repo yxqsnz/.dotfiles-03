@@ -10,6 +10,7 @@ return function(use)
 
 	require("ext.editor.lsp")(use)
 	require("ext.editor.completion")(use)
+	require("ext.editor.wakatime")(use)
 
 	require("ext.lang.c")(use)
 	require("ext.lang.rust")(use)

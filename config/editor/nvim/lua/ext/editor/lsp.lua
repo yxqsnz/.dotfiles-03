@@ -10,7 +10,6 @@ return function(use)
 
 	use({
 		"neovim/nvim-lspconfig",
-
 		config = function()
 			local config = require("user.settings").lsp
 
@@ -72,6 +71,31 @@ return function(use)
 			require("document-color").setup({
 				mode = "foreground",
 			})
+
+			require("lsp_signature").setup({
+				bind = true, -- This is mandatory, otherwise border config won't get registered.
+				handler_opts = {
+					border = "none",
+				},
+			})
+		end,
+	})
+
+	use({
+		"glepnir/lspsaga.nvim",
+		cmd = "Lspsaga",
+		config = function()
+			local saga = require("lspsaga")
+			saga.init_lsp_saga({})
+		end,
+	})
+
+	use({
+		"folke/trouble.nvim",
+		requires = { "kyazdani42/nvim-web-devicons" },
+		command = { "Trouble", "TroubleClose", "TroubleToggle", "TroubleRefresh" },
+		config = function()
+			require("trouble").setup({})
 		end,
 	})
 end
