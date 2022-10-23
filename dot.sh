@@ -8,6 +8,7 @@ declare -A _dotfiles=(
  ["shell/fish"]="$HOME/.config/fish"
  ["comp/cargo.toml"]="$HOME/.cargo/config.toml"
  ["app/dev/git"]="${HOME}/.config/git"
+ ["editor/nvim"]="${HOME}/.config/nvim"
 )
 
 _exists() {
