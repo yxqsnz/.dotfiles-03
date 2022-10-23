@@ -13,4 +13,5 @@ return function(use)
 
 	require("ext.lang.c")(use)
 	require("ext.lang.rust")(use)
+	require("ext.lang.neorg")(use)
 end
