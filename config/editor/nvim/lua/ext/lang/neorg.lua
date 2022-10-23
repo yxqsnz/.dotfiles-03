@@ -6,6 +6,12 @@ return function(use)
 				load = {
 					["core.defaults"] = {},
 					["core.keybinds"] = {},
+					["core.export.markdown"] = {},
+					["core.presenter"] = {
+						config = {
+							zen_mode = "zen-mode",
+						},
+					},
 					["core.norg.completion"] = {
 						config = {
 							engine = "nvim-cmp",
@@ -22,6 +28,6 @@ return function(use)
 		event = { "BufRead", "BufNewFile" },
 		ft = "norg",
 		after = "nvim-treesitter",
-		requires = "nvim-lua/plenary.nvim",
+		requires = { "nvim-lua/plenary.nvim", "folke/zen-mode.nvim" },
 	})
 end
