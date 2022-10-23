@@ -74,4 +74,13 @@ return function(use)
 			})
 		end,
 	})
+
+	use({
+		"lewis6991/gitsigns.nvim",
+		event = { "BufRead", "BufNewFile" },
+
+		config = function()
+			require("gitsigns").setup()
+		end,
+	})
 end
