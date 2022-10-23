@@ -36,6 +36,7 @@ return function(use)
 
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
+		event = { "BufRead", "BufNewFile" },
 		requires = { "lukas-reineke/lsp-format.nvim" },
 		config = function()
 			local config = require("user.settings").lsp

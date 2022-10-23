@@ -5,6 +5,8 @@ return function(use)
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 
+		event = { "BufNewFile", "BufRead" },
+
 		config = function()
 			local config = require("user.settings").treesitter
 
