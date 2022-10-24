@@ -11,7 +11,7 @@ return {
 	},
 	lsp = {
 		servers = { "taplo", "sumneko_lua", "tsserver", "volar", "tailwindcss" },
-		linters = { "eslint" },
-		formatters = { "stylua", "prettierd" },
+		linters = { "eslint", "shellcheck" },
+		formatters = { "stylua", "prettierd", "clang_format", "shellharden", "shfmt" },
 	},
 }

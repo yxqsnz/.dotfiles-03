@@ -5,8 +5,19 @@ return function(use)
 		config = function()
 			require("clangd_extensions").setup({
 				server = {
-					-- options to pass to nvim-lspconfig
-					-- i.e. the arguments to require("lspconfig").clangd.setup({})
+					cmd = {
+						"clangd",
+						"--offset-encoding=utf-16",
+						"--all-scopes-completion",
+						"--completion-style=detailed",
+						"--background-index",
+						"--header-insertion-decorators",
+						"--header-insertion=iwyu",
+						"--enable-config",
+						"--clang-tidy",
+						"--pch-storage=disk",
+					},
+					on_attach = require("lsp.handler").on_attach,
 				},
 				extensions = {
 					-- defaults:

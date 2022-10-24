@@ -13,6 +13,7 @@ return function(use)
 	require("ext.editor.wakatime")(use)
 	require("ext.editor.zen")(use)
 	require("ext.editor.git")(use)
+	require("ext.editor.project")(use)
 
 	require("ext.lang.c")(use)
 	require("ext.lang.rust")(use)

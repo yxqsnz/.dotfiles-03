@@ -52,7 +52,7 @@ return function(use)
 
 			null.setup({
 				sources = sources,
-				on_attach = require("lsp-format").on_attach,
+				on_attach = require("lsp-format").on_attach
 			})
 		end,
 	})
