@@ -23,7 +23,6 @@ vim.opt.smartindent = true
 
 -- Perf
 vim.opt.updatetime = 10
-
 -- Misc
 vim.opt.numberwidth = 5
 vim.opt.scrolloff = 8

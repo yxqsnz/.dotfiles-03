@@ -7,11 +7,11 @@ return {
 		end,
 	},
 	treesitter = {
-		ensure_installed = { "c", "lua", "javascript", "typescript", "bash", "vue" },
+		ensure_installed = { "c", "vim", "lua", "javascript", "typescript", "bash", "vue" },
 	},
 	lsp = {
-		servers = { "sumneko_lua", "tsserver", "volar" },
-		linters = { "eslint_d" },
+		servers = { "taplo", "sumneko_lua", "tsserver", "volar", "tailwindcss" },
+		linters = { "eslint" },
 		formatters = { "stylua", "prettierd" },
 	},
 }
