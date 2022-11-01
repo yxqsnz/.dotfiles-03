@@ -7,10 +7,11 @@ declare -A _dotfiles=(
 	["wm/mako"]="$HOME/.config/mako"
 	["app/term/foot"]="$HOME/.config/foot"
 	["app/term/kitty"]="$HOME/.config/kitty"
+  ["app/term/alacritty"]="$HOME/.config/alacritty"
 	["shell/fish"]="$HOME/.config/fish"
 	["comp/cargo.toml"]="$HOME/.cargo/config.toml"
 	["app/dev/git"]="${HOME}/.config/git"
-	["editor/nvim"]="${HOME}/.config/nvim"
+	["editor/astrovim"]="${HOME}/.config/nvim/lua/user"
 )
 
 _exists() {

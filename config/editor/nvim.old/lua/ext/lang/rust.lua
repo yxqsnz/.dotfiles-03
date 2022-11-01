@@ -161,6 +161,7 @@ return function(use)
 					-- standalone file support
 					-- setting it to false may improve startup time
 					standalone = true,
+					on_attach = require("lsp.handler").on_attach,
 				}, -- rust-analyzer options
 
 				-- debugging stuff

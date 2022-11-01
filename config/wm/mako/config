@@ -10,7 +10,7 @@ icons=1
 max-icon-size=64
 default-timeout=5000
 ignore-timeout=1
-font=Ubuntu 11
+font=JetBrains Mono 11
 
 [urgency=low]
 border-color=#232a2d

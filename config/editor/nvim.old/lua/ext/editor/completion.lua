@@ -6,16 +6,25 @@ return function(use)
 			"hrsh7th/cmp-nvim-lsp",
 			"saadparwaiz1/cmp_luasnip",
 			"L3MON4D3/LuaSnip",
+      "rafamadriz/friendly-snippets",
 			{ "hrsh7th/cmp-buffer", event = { "BufRead", "BufNewFile" } },
 			"windwp/nvim-autopairs",
 		},
 		config = function()
+			 local opts = {
+			  border = 'single',
+				winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None'
+			}
 			local luasnip = require("luasnip")
 			local cmp = require("cmp")
 			local kind = require("ext.editor.cmp.kind")
 			require("nvim-autopairs").setup({})
+      require("luasnip.loaders.from_vscode").lazy_load()
 
 			cmp.setup({
+				window = {
+    			documentation = cmp.config.window.bordered(opts),
+				},
 				formatting = {
 					fields = { "kind", "abbr" },
 					format = function(_, vim_item)
@@ -60,13 +69,12 @@ return function(use)
 
 				sources = {
 					{ name = "nvim_lsp" },
-					{ name = "luasnip" },
 					{ name = "buffer" },
+					{ name = "luasnip" },
 				},
 			})
 
 			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-			local cmp = require("cmp")
 			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 		end,
 	})

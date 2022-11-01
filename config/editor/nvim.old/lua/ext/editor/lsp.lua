@@ -52,17 +52,18 @@ return function(use)
 
 			null.setup({
 				sources = sources,
-				on_attach = require("lsp-format").on_attach
+				on_attach = require("lsp-format").on_attach,
 			})
 		end,
 	})
 
 	use({
-		"ray-x/lsp_signature.nvim",
+		"mrshmllow/document-color.nvim",
+		event = { "BufRead", "BufNewFile" },
 		requires = {
-			"mrshmllow/document-color.nvim",
 			{
 				"kosayoda/nvim-lightbulb",
+				"ray-x/lsp_signature.nvim",
 				requires = "antoinemadec/FixCursorHold.nvim",
 			},
 		},
@@ -71,22 +72,33 @@ return function(use)
 			require("document-color").setup({
 				mode = "foreground",
 			})
-
-			require("lsp_signature").setup({
-				bind = true, -- This is mandatory, otherwise border config won't get registered.
+			require('lsp_signature').setup({
+				bind = true,
+				hint_enable = false,
+				fix_pos = true,
+				floating_window = true,
 				handler_opts = {
-					border = "none",
-				},
+		      border = "single"
+       }
 			})
 		end,
 	})
 
 	use({
 		"glepnir/lspsaga.nvim",
+		event = {"BufRead", "BufNewFile"},
 		cmd = "Lspsaga",
 		config = function()
 			local saga = require("lspsaga")
-			saga.init_lsp_saga({})
+			saga.init_lsp_saga({
+				code_action_lightbulb = {
+		   	 enable = false
+			  },
+				symbol_in_winbar = {
+					enable = true,
+					separator = '  ',
+				}
+			})
 		end,
 	})
 
@@ -98,4 +110,6 @@ return function(use)
 			require("trouble").setup({})
 		end,
 	})
+
+	use({ "b0o/schemastore.nvim", module = "schemastore" })
 end

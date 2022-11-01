@@ -1,6 +1,11 @@
 [build]
-rustc-wrapper = "sccache"
+rustc-wrapper = "cachepot"
+target-dir = "/home/yxqsnz/.cargo/target"
+jobs = 8
+
+[profile.dev]
+debug = false
 
 [target.x86_64-unknown-linux-gnu]
-rustflags = ["-C", "link-arg=-fuse-ld=mold"]
+rustflags = ["-C", "link-arg=-fuse-ld=mold", "-C", "link-arg=-Xlinker --threads=8",]
 linker = "clang"

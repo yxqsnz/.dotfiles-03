@@ -1,10 +1,10 @@
 return function(use)
 	use({
-		"nvim-lualine/lualine.nvim",
+		"feline-nvim/feline.nvim",
 		after = "noice.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		config = function()
-			require("lualine").setup({})
+			require("feline").setup({})
 		end,
 	})
 
@@ -12,7 +12,25 @@ return function(use)
 		"folke/noice.nvim",
 		event = "VimEnter",
 		config = function()
-			require("noice").setup({})
+			require("noice").setup({
+				lsp = {
+					signature = {
+						enabled = false,
+						auto_open = { enabled = false },
+					},
+					hover = {
+						enabled = false,
+					},
+					override = {
+						-- override the default lsp markdown formatter with Noice
+						["vim.lsp.util.convert_input_to_markdown_lines"] = false,
+						-- override the lsp markdown formatter with Noice
+						["vim.lsp.util.stylize_markdown"] = false,
+						-- override cmp documentation with Noice (needs the other options to work)
+						["cmp.entry.get_documentation"] = false,
+					},
+				},
+			})
 
 			local notify = vim.notify
 

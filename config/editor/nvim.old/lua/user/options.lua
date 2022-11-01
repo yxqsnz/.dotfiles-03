@@ -22,7 +22,7 @@ vim.opt.smartcase = true
 vim.opt.smartindent = true
 
 -- Perf
-vim.opt.updatetime = 10
+vim.opt.updatetime = 300
 -- Misc
 vim.opt.numberwidth = 5
 vim.opt.scrolloff = 8
@@ -53,3 +53,5 @@ vim.opt.cmdheight = 0
 
 --vim.optpt.list = true
 vim.opt.listchars:append("space:⋅")
+
+

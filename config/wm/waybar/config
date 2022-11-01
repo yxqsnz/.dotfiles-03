@@ -18,7 +18,7 @@
   ],
   "modules-right": [
     "tray",
-     "battery",
+    "battery",
     "pulseaudio",
     "clock"
   ],
@@ -31,7 +31,9 @@
       "2": "web",
       "3": "dev",
       "4": "chat",
-      "5": "misc",
+      "5": "vm",
+      "6": "misc",
+      "8": "games",
       "urgent": "",
       "focused": "",
       "default": ""
